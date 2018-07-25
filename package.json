@@ -1,0 +1,61 @@
+{
+  "name": "pitchcastjs",
+  "version": "1.0.0",
+  "description": "A Typescript implementation of pitchcast",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeWaS/pitchcastJS.git"
+  },
+  "keywords": [
+    "Typescript",
+    "nestJS",
+    "Baseball",
+    "Sabermetrics"
+  ],
+  "author": "SeWaS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeWaS/pitchcastJS/issues"
+  },
+  "homepage": "https://github.com/SeWaS/pitchcastJS#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.0",
+    "@types/node": "^10.5.3",
+    "@nestjs/testing": "^5.0.1",
+    "supertest": "^3.1.0",
+    "jest": "^23.4.1",
+    "ts-jest": "^22.4.6",
+    "ts-node": "^7.0.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "@nestjs/common": "^5.1.0",
+    "@nestjs/core": "^5.1.0",
+    "@nestjs/microservices": "^5.1.0",
+    "@nestjs/websockets": "^5.1.0",
+    "@types/reflect-metadata": "^0.0.5",
+    "@types/express": "^4.0.37",
+    "express": "^4.16.1",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.2.2",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage"
+  }
+}
