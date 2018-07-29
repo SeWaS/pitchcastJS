@@ -2,11 +2,18 @@ language: node_js
 node_js:
   - "8"
 
+install:
+  - npm install
+
+script:
+  - npm run lint
+  - npm test
+
 after_success:
   - docker login $REGISTRY_URL -u $REGISTRY_USER -p $REGISTRY_PASS
 
   - export APP=sewas/pitchcastjs
-  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo "staging" ; fi`
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == false ]; then echo "latest"; else echo "staging" ; fi`
 
   - docker build -t $REGISTRY_URL/$APP:$TAG .
   - docker push $REGISTRY_URL/$APP:$TAG

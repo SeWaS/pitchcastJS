@@ -1,5 +1,5 @@
-import { Module } from '@nestjs/common';
-import { PitchModule } from './modules/pitch/pitch.module';
+import { Module } from '@nestjs/common'
+import { PitchModule } from './modules/pitch/pitch.module'
 
 @Module({
     imports: [

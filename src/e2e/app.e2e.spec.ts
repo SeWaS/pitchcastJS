@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { ApplicationModule } from '../app.module'
-import { INestApplication } from '../../node_modules/@nestjs/common';
-import * as request from 'supertest';
+import { INestApplication } from '../../node_modules/@nestjs/common'
+import * as request from 'supertest'
 
 describe(`The application`, () => {
-    let app: INestApplication; 
+    let app: INestApplication
 
     beforeAll(async () => {
         const module: TestingModule = await Test.createTestingModule({
@@ -23,7 +23,7 @@ describe(`The application`, () => {
             .expect(200)
             .expect('Content-Type', /json/)
             .then(response => {
-                expect(response.body.name).toEqual("Seas")
+                expect(response.body.name).toEqual('Seas')
             })
     })
 
