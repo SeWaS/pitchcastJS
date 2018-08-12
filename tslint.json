@@ -17,13 +17,16 @@
         "ordered-imports": [
             false
         ],
+        "object-literal-sort-keys": false,
+        "interface-name": [true, "never-prefix"],
         "max-line-length": [
             true,
             150
         ],
         "semicolon": [true, "never"],
         "arrow-parens": [true, "ban-single-arg-parens"],
-        "no-console": [false, "log", "error"]
+        "no-console": [false, "log", "error"],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"]
     },
     "rulesDirectory": []
 }

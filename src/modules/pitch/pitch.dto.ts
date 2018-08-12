@@ -1,10 +1,34 @@
+import { IsNumber, IsEnum, IsNotEmpty } from 'class-validator'
 
-export class Pitch {
+export enum PitchResultDto {
+    BALL = 'BALL',
+    FOULBALL = 'FOULBALL',
+    STRIKE = 'STRIKE',
+    BALL_IN_PLAY = 'BALL_IN_PLAY',
+    HIT_BY_PITCH = 'HIT_BY_PITCH'
+}
 
-    name: string
+export  enum PitchTypeDto {
+    FOURSEEM = 'FOURSEEM',
+    TWOSEAM = 'TWOSEAM',
+    CURVEBALL = 'CURVEBALL',
+    SLIDER = 'SLIDER'
+}
 
-    constructor(name: string) {
-        this.name = name
-    }
+export class PitchDto {
+    @IsNumber()
+    @IsNotEmpty()
+    x: number
 
+    @IsNumber()
+    @IsNotEmpty()
+    y: number
+
+    @IsEnum(PitchResultDto)
+    @IsNotEmpty()
+    pitchResult: PitchResultDto
+
+    @IsEnum(PitchTypeDto)
+    @IsNotEmpty()
+    pitchType: PitchTypeDto
 }
