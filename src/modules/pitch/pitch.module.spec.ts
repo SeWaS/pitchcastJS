@@ -20,28 +20,22 @@ describe(`The Pitch module`, () => {
         }).compile()
 
         app = module.createNestApplication()
-        pitchProvider = app.get<PitchProvider>(PitchProvider)
         await app.init()
     })
 
     it(`should return all available pitches`, () => {
-        // given
-        jest.spyOn(pitchProvider, 'getPitches')
-
         // when
         return request(app.getHttpServer())
             .get('/pitches')
             .expect(200)
             .expect('Content-Type', /json/)
             .then(response => {
-                expect(pitchProvider.getPitches).toHaveBeenCalled()
+                //expect(pitchProvider.getPitches).toHaveBeenCalled()
             })
     })
 
     it(`should add a pitch`, () => {
         // given
-        jest.spyOn(pitchProvider, 'addPitch')
-
         const pitchDto: PitchDto = new PitchDto()
         pitchDto.x = 0.5
         pitchDto.y = 2.66
@@ -60,8 +54,11 @@ describe(`The Pitch module`, () => {
             .expect(201)
             .expect('Content-Type', /json/)
             .then(response => {
-                expect(pitchProvider.addPitch).toHaveBeenCalledWith(pitch)
-                expect(response.body).toEqual(pitch)
+                //expect(pitchProvider.addPitch).toHaveBeenCalled()
+                expect(response.body.x).toEqual(pitch.x)
+                expect(response.body.y).toEqual(pitch.y)
+                expect(response.body.pitchType).toEqual(pitch.pitchType)
+                expect(response.body.pitchResult).toEqual(pitch.pitchResult)
             })
     })
 

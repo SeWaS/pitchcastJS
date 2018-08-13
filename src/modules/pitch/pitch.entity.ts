@@ -1,3 +1,4 @@
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
 export enum PitchResult {
     BALL = 'BALL',
@@ -14,9 +15,11 @@ export  enum PitchType {
     SLIDER = 'SLIDER'
 }
 
+@Entity()
 export class Pitch {
-    x: number
-    y: number
-    pitchResult: PitchResult
-    pitchType: PitchType
+    @PrimaryGeneratedColumn() id: number
+    @Column('decimal') x: number
+    @Column('decimal') y: number
+    @Column() pitchResult: PitchResult
+    @Column() pitchType: PitchType
 }
