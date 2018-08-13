@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common'
 import { PitchModule } from './pitch/pitch.module'
-import { ConfigurationModule } from './config/config.module'
 import { GlobalTransformerModule } from './transformer/transformer.module'
+import { TypeOrmModule } from '@nestjs/typeorm'
 
 @Module({
     imports: [
-        ConfigurationModule,
         GlobalTransformerModule,
         PitchModule
     ]
