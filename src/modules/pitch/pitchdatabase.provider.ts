@@ -8,4 +8,4 @@ export const pitchDatabaseProvider = [
       provide: 'PitchDatabase',
       useFactory: async () => await createConnection(ormConfig)
     }
-  ];
+  ]

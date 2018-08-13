@@ -1,5 +1,5 @@
 import { Connection } from 'typeorm'
-import { Pitch } from './pitch.entity';
+import { Pitch } from './pitch.entity'
 
 export const pitchDBProvider = [
     {
@@ -7,4 +7,4 @@ export const pitchDBProvider = [
       useFactory: (connection: Connection) => connection.getRepository(Pitch),
       inject: ['PitchDatabase'],
     },
-  ];
+  ]

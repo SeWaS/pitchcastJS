@@ -9,7 +9,6 @@ import { GlobalTransformerModule } from '../transformer/transformer.module'
 
 describe(`The Pitch module`, () => {
     let app: INestApplication
-    let pitchProvider: PitchProvider
 
     beforeAll(async () => {
         const module: TestingModule = await Test.createTestingModule({
@@ -30,7 +29,7 @@ describe(`The Pitch module`, () => {
             .expect(200)
             .expect('Content-Type', /json/)
             .then(response => {
-                //expect(pitchProvider.getPitches).toHaveBeenCalled()
+                expect(response.body).not.toBeUndefined()
             })
     })
 
@@ -54,7 +53,6 @@ describe(`The Pitch module`, () => {
             .expect(201)
             .expect('Content-Type', /json/)
             .then(response => {
-                //expect(pitchProvider.addPitch).toHaveBeenCalled()
                 expect(response.body.x).toEqual(pitch.x)
                 expect(response.body.y).toEqual(pitch.y)
                 expect(response.body.pitchType).toEqual(pitch.pitchType)

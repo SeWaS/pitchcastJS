@@ -24,9 +24,8 @@ const config = {
              entities: [__dirname + '/../**/*.entity{.ts,.js}'],
              synchronize: true
         }
- }
+    }
 }
-   
-   const envConfig = config[process.env.NODE_ENV || 'development']
-   
-   export default envConfig
+
+const envConfig = config[process.env.NODE_ENV || 'development']
+export default envConfig

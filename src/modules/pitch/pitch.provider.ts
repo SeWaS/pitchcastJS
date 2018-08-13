@@ -9,8 +9,6 @@ export class PitchProvider {
         @Inject('PitchRepository') private readonly pitchRepository: Repository<Pitch>
     ) {}
 
-    pitches: Pitch[] = new Array<Pitch>()
-
     async getPitches(): Promise<Pitch[]> {
         return this.pitchRepository.find()
     }
