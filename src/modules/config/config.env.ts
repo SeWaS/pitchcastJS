@@ -16,8 +16,8 @@ const config = {
         port: 4000,
         ormtype: {
              type: 'postgres',
-             host: '192.168.99.100',
-             port: 5432,
+             host: 'localhost',
+             port: 1234,
              username: 'root',
              password: 'root',
              database: 'pitches',

@@ -10,7 +10,7 @@ services:
 
 script:
   - npm run lint
-  - docker run -p 5432:5432 --name postgres-test-db -e POSTGRES_PASSWORD=root -e POSTGRES_DB=pitches -e POSTGRES_USER=root -d postgres:latest
+  - docker run -p 1234:5432 --name postgres-test-db -e POSTGRES_PASSWORD=root -e POSTGRES_DB=pitches -e POSTGRES_USER=root -d postgres:latest
   - npm test
 
 after_success:
