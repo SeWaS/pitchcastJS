@@ -4,13 +4,13 @@ import * as request from 'supertest'
 import { PitchModule } from './pitch.module'
 import { PitchDto, PitchTypeDto, PitchResultDto } from './pitch.dto'
 import { Pitch, PitchType, PitchResult } from './pitch.entity'
-import { PitchProvider } from './pitch.provider'
 import { GlobalTransformerModule } from '../transformer/transformer.module'
 
 describe(`The Pitch module`, () => {
     let app: INestApplication
 
     beforeAll(async () => {
+
         const module: TestingModule = await Test.createTestingModule({
             imports: [
                 GlobalTransformerModule,
