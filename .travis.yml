@@ -11,8 +11,8 @@ services:
 script:
   # ENV Vars for Test-DB connection
   - export PITCH_DB_HOST=localhost
-  - export PITCH_DB_PITCH_DB_PORT=1234
-  - export PITCH_DB_PITCH_DB_USER=root
+  - export PITCH_DB_PORT=1234
+  - export PITCH_DB_USER=root
   - export PITCH_DB_PASSWORD=root
   - export PITCH_DB_NAME=pitches
 
