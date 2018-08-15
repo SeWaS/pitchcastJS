@@ -10,11 +10,11 @@ services:
 
 script:
   # ENV Vars for Test-DB connection
-  - export PITCH_DB_HOST = 'localhost'
-  - export PITCH_DB_PITCH_DB_PORT = 1234
-  - export PITCH_DB_PITCH_DB_USER = 'root'
-  - export PITCH_DB_PASSWORD = 'root'
-  - export PITCH_DB_NAME = 'pitches'
+  - export PITCH_DB_HOST=localhost
+  - export PITCH_DB_PITCH_DB_PORT=1234
+  - export PITCH_DB_PITCH_DB_USER=root
+  - export PITCH_DB_PASSWORD=root
+  - export PITCH_DB_NAME=pitches
 
   - npm run lint
   - docker run -p $PITCH_DB_PORT:5432 --name postgres-test-db -e POSTGRES_PASSWORD=$PITCH_DB_PASSWORD -e POSTGRES_DB=$PITCH_DB_NAME -e POSTGRES_USER=$PITCH_DB_USER -d postgres:latest
