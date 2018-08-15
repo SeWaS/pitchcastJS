@@ -16,13 +16,13 @@ const config = {
         port: 4000,
         ormtype: {
              type: process.env.PITCH_DB_DRIVER || 'postgres',
-             host: process.env.PITCH_DB_HOST || 'localhost',
-             port: process.env.PITCH_DB_PORT || 1234,
+             host: process.env.PITCH_DB_HOST || '192.168.99.100',
+             port: process.env.PITCH_DB_PORT || 9999,
              username: process.env.PITCH_DB_USER || 'root',
              password: process.env.PITCH_DB_PASSWORD || 'root',
              database: process.env.PITCH_DB_NAME || 'pitches',
              entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-             synchronize: Boolean(process.env.PITCH_DB_SYNC) || true
+             synchronize: process.env.PITCH_DB_SYNC || true
         }
     }
 }
